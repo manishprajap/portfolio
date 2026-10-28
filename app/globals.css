@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+:root{
+  --bg:#f7f5ff; --surface:#ffffff; --fg:#161233; --muted:#5d5983; --line:#e0dcf5;
+  --accent:#5b3df5; --accent-ink:#ffffff; --accent-soft:#ece8ff;
+  --c2:#e11d56; --c2s:#ffe3ea; --c3:#c45f00; --c3s:#fff0d4; --c4:#007f76; --c4s:#d6f5f1;
+  --g1:#5b3df533; --g2:#ff3d6e26; --shadow:#5b3df544;
+  --cg1:#5b3df5; --cg2:#c026d3; --cg3:#ff3d6e;
+  --code-bg:#14102e; --code-fg:#dcd8f5; --code-key:#a99bff; --code-str:#6ee7b7; --code-num:#ffc361; --code-dim:#8a84b8;
+  --good:#00876e; --good-soft:#d6f5f1;
+  --gl:max(16px,env(safe-area-inset-left,0px)); --gr:max(16px,env(safe-area-inset-right,0px));
+  --f-display:"Bricolage Grotesque","Hanken Grotesk",system-ui,sans-serif;
+  --f-body:"Hanken Grotesk",system-ui,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f0c1f; --surface:#1a1633; --fg:#f2efff; --muted:#aca6d1; --line:#2e2852;
+    --accent:#a094ff; --accent-ink:#0f0c1f; --accent-soft:#272150;
+    --c2:#ff7a98; --c2s:#3d1f33; --c3:#ffbb55; --c3s:#3a2d14; --c4:#3fdccd; --c4s:#12332f;
+    --g1:#7c5cff3a; --g2:#ff3d6e2a; --shadow:#7c5cff55;
+    --cg1:#4a2fe0; --cg2:#a61cc0; --cg3:#e0345f;
+    --code-bg:#0b0919; --good:#3fdccd; --good-soft:#12332f; color-scheme:dark;
+  }
+}
+
+:root[data-theme="dark"]{
+  --bg:#0f0c1f; --surface:#1a1633; --fg:#f2efff; --muted:#aca6d1; --line:#2e2852;
+  --accent:#a094ff; --accent-ink:#0f0c1f; --accent-soft:#272150;
+  --c2:#ff7a98; --c2s:#3d1f33; --c3:#ffbb55; --c3s:#3a2d14; --c4:#3fdccd; --c4s:#12332f;
+  --g1:#7c5cff3a; --g2:#ff3d6e2a; --shadow:#7c5cff55;
+  --cg1:#4a2fe0; --cg2:#a61cc0; --cg3:#e0345f;
+  --code-bg:#0b0919; --good:#3fdccd; --good-soft:#12332f; color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-body);margin:0;padding-left:var(--gl);padding-right:var(--gr);padding-block:0 48px}
+.wrap{max-width:1040px;margin-inline:auto}
+/* ... baki tumhara pura CSS jo tumne bheja tha yaha paste rahega - maine upar :root fix kiya hai */
