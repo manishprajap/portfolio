@@ -57,10 +57,12 @@ export const projects: Project[] = [
   { name: "101acres", desc: "Real estate platform with property listings and nearby search.", cats: ["live", "web", "mobile"], live: true, url: "101acres.com", tags: ["Next.js", "Ionic React"] },
   { name: "Eliteweds", desc: "Matrimony platform for web and mobile.", cats: ["live", "web", "mobile"], live: true, url: "eliteweds.com", tags: ["Next.js", "Ionic React"] },
   { name: "Shriecom", desc: "E-commerce platform with online payments.", cats: ["live", "web", "mobile"], live: true, url: "shriecom.in", tags: ["Laravel", "React Ionic"] },
-  { name: "Eybos", desc: "Business and charity platform with payments, donations and role-based dashboards.", cats: ["live", "web"], live: true, tags: ["Laravel", "RBAC", "Payments"] },
+  { name: "Eybos", desc: "Business and charity platform with payments, donations and role-based dashboards.", cats: ["live", "web"], live: true, url: "eybos.uk", tags: ["Laravel", "RBAC", "Payments"] },
   { name: "Yama", desc: "MLM backend with commission and network logic, delivered as REST APIs.", cats: ["live", "api"], live: true, tags: ["Laravel", "REST APIs"] },
+  { name: "Plenty Music", desc: "UK sheet music platform with downloadable scores and accompaniments, a credit system, QR code generation and flipbook creation for ebooks.", cats: ["live", "web"], live: true, url: "plentymusic.uk", tags: ["CodeIgniter", "QR Code", "Flipbook"] },
+  { name: "Lookupit Solutions", desc: "Company website with services, portfolio, client feedback and blog sections.", cats: ["live", "web"], live: true, url: "lookupitsolutions.com", tags: ["Web", "Company site"] },
   { name: "DICOM Imaging App", desc: "Cloud medical imaging with a DICOM viewer, image upload and Orthanc integration.", cats: ["mobile", "api"], tags: ["Laravel", "Ionic React", "Capacitor", "Orthanc"] },
-  { name: "Aarnexai", desc: "AI-focused platform with social account connect and analytics.", cats: ["web", "mobile"], tags: ["Next.js", "Ionic React"] },
+  { name: "Aarnexai", desc: "AI-focused platform with social account connect and analytics.", cats: ["web", "mobile"],live: true, url: "aarnexai.com/", tags: ["Next.js", "Ionic React"] },
   { name: "Torah Nuggets", desc: "Backend APIs for a content publishing platform.", cats: ["api"], tags: ["Laravel", "REST APIs"] },
 ];
 
