@@ -2,6 +2,7 @@
 import { useEffect, useState, FormEvent } from "react";
 import { GithubIcon, LinkedinIcon } from "./Icons";
 import { EMAIL, PHONE, GITHUB, LINKEDIN, roles, stats, deliver, jobs, projects, skills, levels, education } from "@/lib/data";
+import Image from "next/image";
 
 const NAV = [
   ["work", "Experience"], ["projects", "Projects"], ["skills", "Skills"], ["education", "Education"], ["about", "About"], ["contact", "Contact"],
@@ -183,11 +184,13 @@ export default function Portfolio() {
 
         <section id="about" aria-labelledby="h-about">
           <div className="about">
-            <div className="about-photo" aria-hidden="true">MP</div>
+            <div className="about-photo">
+              <Image src="/manish.jpeg" alt="Maneesh Prajapati" width={400} height={400} priority={false} />
+            </div>
             <div>
               <div className="sec-head"><h2 id="h-about">About me</h2></div>
               <p className="about-t">Full-stack web developer with 3+ years of experience building Laravel backends, token-based REST APIs and Next.js / Ionic React frontends for multi-role platforms. I have delivered e-commerce, real estate, matrimony, MLM, medical imaging and business and charity platforms, with payment gateways, third-party APIs, role-based access control, database optimization and VPS deployment. At present I work at Aarnatech Xperts Solutions, Lucknow.</p>
-              <div className="cta"><a className="btn ghost" href="/resume.pdf" target="_blank" rel="noopener">See my resume</a></div>
+              <div className="cta"><a className="btn ghost" href="/Maneesh_Prajapati.pdf" target="_blank" rel="noopener">See my resume</a></div>
             </div>
           </div>
         </section>

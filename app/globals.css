@@ -251,3 +251,6 @@ img,svg{max-width:100%}
   .skills div{padding:14px}
   .cta .btn{flex:1;text-align:center}
 }
+
+.about-photo{overflow:hidden;padding:0}
+.about-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
