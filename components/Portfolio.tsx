@@ -190,7 +190,7 @@ export default function Portfolio() {
             <div>
               <div className="sec-head"><h2 id="h-about">About me</h2></div>
               <p className="about-t">Full-stack web developer with 3+ years of experience building Laravel backends, token-based REST APIs and Next.js / Ionic React frontends for multi-role platforms. I have delivered e-commerce, real estate, matrimony, MLM, medical imaging and business and charity platforms, with payment gateways, third-party APIs, role-based access control, database optimization and VPS deployment. At present I work at Aarnatech Xperts Solutions, Lucknow.</p>
-              <div className="cta"><a className="btn ghost" href="/Maneesh_Prajapati.pdf" target="_blank" rel="noopener">See my resume</a></div>
+              <div className="cta"><a className="btn ghost" href="/Maneesh_Prajapati_CV.pdf" target="_blank" rel="noopener">See my resume</a></div>
             </div>
           </div>
         </section>
