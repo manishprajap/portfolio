@@ -1,8 +1,10 @@
 "use client";
 import { useEffect, useState, FormEvent } from "react";
 import { GithubIcon, LinkedinIcon } from "./Icons";
-import { EMAIL, PHONE, GITHUB, LINKEDIN, roles, stats, deliver, jobs, projects, skills, levels, education } from "@/lib/data";
+import { EMAIL, PHONE, GITHUB, LINKEDIN, roles, stats, deliver, jobs, projects, levels, education } from "@/lib/data";
 import Image from "next/image";
+import RecentWorks from "./RecentWorks";
+import SkillSet from "./SkillSet";
 
 const NAV = [
   ["work", "Experience"], ["projects", "Projects"], ["skills", "Skills"], ["education", "Education"], ["about", "About"], ["contact", "Contact"],
@@ -135,11 +137,12 @@ export default function Portfolio() {
         </section>
 
         <section id="projects" aria-labelledby="h-proj">
-          <div className="sec-head"><h2 id="h-proj">Projects</h2><span>{shown.length} {shown.length === 1 ? "project" : "projects"}</span></div>
+          <RecentWorks />
           <div className="filters" role="group" aria-label="Filter projects">
             {FILTERS.map((f) => (
               <button key={f} type="button" aria-pressed={filter === f} onClick={() => setFilter(f)}>{f[0].toUpperCase() + f.slice(1)}</button>
             ))}
+            <span className="count" aria-live="polite">{shown.length} {shown.length === 1 ? "project" : "projects"}</span>
           </div>
           <div className="grid">
             {shown.map((p) => (
@@ -155,12 +158,7 @@ export default function Portfolio() {
         </section>
 
         <section id="skills" aria-labelledby="h-skills">
-          <div className="sec-head"><h2 id="h-skills">Skills</h2><span>Core stack highlighted</span></div>
-          <dl className="skills">
-            {skills.map((g) => (
-              <div key={g.k}><dt>{g.k}</dt><dd>{g.items.map(([n, core]) => <span key={n} className={core ? "core" : undefined}>{n}</span>)}</dd></div>
-            ))}
-          </dl>
+          <SkillSet />
           <h3 className="sub-h">Comfort level</h3>
           <div className="levels">
             {levels.map(([n, v]) => (
