@@ -1,30 +1,16 @@
 "use client";
 import { useEffect, useState, FormEvent } from "react";
 import { GithubIcon, LinkedinIcon } from "./Icons";
-import { EMAIL, PHONE, GITHUB, LINKEDIN, roles, stats, deliver, jobs, projects, skills, levels, education } from "@/lib/data";
+import { EMAIL, PHONE, GITHUB, LINKEDIN, roles, stats, deliver, jobs, projects, levels, education } from "@/lib/data";
 import Image from "next/image";
+import Typewriter from "typewriter-effect";
+import RecentWorks from "./RecentWorks";
+import SkillSet from "./SkillSet";
 
 const NAV = [
   ["work", "Experience"], ["projects", "Projects"], ["skills", "Skills"], ["education", "Education"], ["about", "About"], ["contact", "Contact"],
 ] as const;
 const FILTERS = ["all", "live", "web", "mobile", "api"] as const;
-
-function useTyper() {
-  const [text, setText] = useState(roles[0]);
-  useEffect(() => {
-    if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    let r = 0, c = roles[0].length, del = true, t: ReturnType<typeof setTimeout>;
-    const tick = () => {
-      if (del) { c--; if (c <= 0) { del = false; r = (r + 1) % roles.length; c = 0; } }
-      else { c++; if (c >= roles[r].length) { del = true; setText(roles[r]); t = setTimeout(tick, 1800); return; } }
-      setText(roles[r].slice(0, c) || " ");
-      t = setTimeout(tick, del ? 35 : 70);
-    };
-    t = setTimeout(tick, 2200);
-    return () => clearTimeout(t);
-  }, []);
-  return text;
-}
 
 function CopyBtn({ value }: { value: string }) {
   const [label, setLabel] = useState("Copy");
@@ -37,7 +23,6 @@ function CopyBtn({ value }: { value: string }) {
 }
 
 export default function Portfolio() {
-  const role = useTyper();
   const [filter, setFilter] = useState<(typeof FILTERS)[number]>("all");
   const [active, setActive] = useState("");
   const [note, setNote] = useState("");
@@ -83,7 +68,7 @@ export default function Portfolio() {
           <div>
             <p className="eyebrow">Hi, I&apos;m Maneesh · Lucknow, India</p>
             <h1>I build the <em>APIs</em> and apps behind multi-role platforms.</h1>
-            <p className="typer" aria-live="off"><span className="p">&gt;</span><span id="role">{role}</span><span className="cur" aria-hidden="true" /></p>
+            <div className="typer" aria-label="Roles"><span className="p">&gt;</span><div id="role"><Typewriter options={{ strings: roles, autoStart: true, loop: true, delay: 70, deleteSpeed: 35 }} /></div></div>
             <p className="lede">3+ years with Laravel backends, token-based REST APIs and Next.js / Ionic React frontends. Five products are live today, from real estate to e-commerce.</p>
             <div className="cta">
               <a className="btn primary" href="#projects">See live projects</a>
@@ -135,11 +120,12 @@ export default function Portfolio() {
         </section>
 
         <section id="projects" aria-labelledby="h-proj">
-          <div className="sec-head"><h2 id="h-proj">Projects</h2><span>{shown.length} {shown.length === 1 ? "project" : "projects"}</span></div>
+          <RecentWorks />
           <div className="filters" role="group" aria-label="Filter projects">
             {FILTERS.map((f) => (
               <button key={f} type="button" aria-pressed={filter === f} onClick={() => setFilter(f)}>{f[0].toUpperCase() + f.slice(1)}</button>
             ))}
+            <span className="count" aria-live="polite">{shown.length} {shown.length === 1 ? "project" : "projects"}</span>
           </div>
           <div className="grid">
             {shown.map((p) => (
@@ -155,12 +141,7 @@ export default function Portfolio() {
         </section>
 
         <section id="skills" aria-labelledby="h-skills">
-          <div className="sec-head"><h2 id="h-skills">Skills</h2><span>Core stack highlighted</span></div>
-          <dl className="skills">
-            {skills.map((g) => (
-              <div key={g.k}><dt>{g.k}</dt><dd>{g.items.map(([n, core]) => <span key={n} className={core ? "core" : undefined}>{n}</span>)}</dd></div>
-            ))}
-          </dl>
+          <SkillSet />
           <h3 className="sub-h">Comfort level</h3>
           <div className="levels">
             {levels.map(([n, v]) => (
