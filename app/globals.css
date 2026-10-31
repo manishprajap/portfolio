@@ -1,31 +1,95 @@
 /* Layout: sticky nav, glowing hero, colour-coded sections, gradient contact block. Four accent colours, each with a soft tint. */
-:root{
-  --bg:#f6f8fc; --surface:#ffffff; --fg:#0f172a; --muted:#526077; --line:#e2e8f0;
-  --accent:#2563eb; --accent-ink:#ffffff; --accent-soft:#e8f0fe;
-  --c2:#4f46e5; --c2s:#e7e6fd; --c3:#0e7490; --c3s:#d9f1f7; --c4:#047857; --c4s:#d5f3e8;
-  --g1:#2563eb26; --g2:#0891b21f; --shadow:#2563eb40;
-  --cg1:#1d4ed8; --cg2:#2563eb; --cg3:#0e7490;
-  --code-bg:#0b1220; --code-fg:#d6e0f5; --code-key:#93b4ff; --code-str:#6ee7b7; --code-num:#fcd34d; --code-dim:#8493b3;
-  --good:#047857; --good-soft:#d5f3e8;
-  --gl:max(clamp(16px,3vw,48px),env(safe-area-inset-left,0px)); --gr:max(clamp(16px,3vw,48px),env(safe-area-inset-right,0px));
-  --f-display:"Bricolage Grotesque","Hanken Grotesk",system-ui,sans-serif;
-  --f-body:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --f-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+:root {
+  --bg: #f7f5ff;
+  --surface: #ffffff;
+  --fg: #161233;
+  --muted: #5d5983;
+  --line: #e0dcf5;
+  --accent: #5b3df5;
+  --accent-ink: #ffffff;
+  --accent-soft: #ece8ff;
+  --c2: #e11d56;
+  --c2s: #ffe3ea;
+  --c3: #c45f00;
+  --c3s: #fff0d4;
+  --c4: #007f76;
+  --c4s: #d6f5f1;
+  --g1: #5b3df533;
+  --g2: #ff3d6e26;
+  --shadow: #5b3df544;
+  --cg1: #5b3df5;
+  --cg2: #c026d3;
+  --cg3: #ff3d6e;
+  --code-bg: #14102e;
+  --code-fg: #dcd8f5;
+  --code-key: #a99bff;
+  --code-str: #6ee7b7;
+  --code-num: #ffc361;
+  --code-dim: #8a84b8;
+  --good: #00876e;
+  --good-soft: #d6f5f1;
+  --gl: max(clamp(16px, 3vw, 48px), env(safe-area-inset-left, 0px));
+  --gr: max(clamp(16px, 3vw, 48px), env(safe-area-inset-right, 0px));
+  --f-display: "Bricolage Grotesque", "Hanken Grotesk", system-ui, sans-serif;
+  --f-body: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#0b1120; --surface:#111a2e; --fg:#e8eefc; --muted:#9fb0cc; --line:#22304d;
-  --accent:#60a5fa; --accent-ink:#0b1120; --accent-soft:#14223f;
-  --c2:#a5b4fc; --c2s:#1d2150; --c3:#22d3ee; --c3s:#0c2c36; --c4:#34d399; --c4s:#0f2f27;
-  --g1:#3b82f633; --g2:#22d3ee22; --shadow:#3b82f64d;
-  --cg1:#1d4ed8; --cg2:#2563eb; --cg3:#0e7490;
-  --code-bg:#070c18; --good:#34d399; --good-soft:#0f2f27; color-scheme:dark;}}
-:root[data-theme="dark"]{
-  --bg:#0b1120; --surface:#111a2e; --fg:#e8eefc; --muted:#9fb0cc; --line:#22304d;
-  --accent:#60a5fa; --accent-ink:#0b1120; --accent-soft:#14223f;
-  --c2:#a5b4fc; --c2s:#1d2150; --c3:#22d3ee; --c3s:#0c2c36; --c4:#34d399; --c4s:#0f2f27;
-  --g1:#3b82f633; --g2:#22d3ee22; --shadow:#3b82f64d;
-  --cg1:#1d4ed8; --cg2:#2563eb; --cg3:#0e7490;
-  --code-bg:#070c18; --good:#34d399; --good-soft:#0f2f27; color-scheme:dark;}
+
+@media (prefers-color-scheme:dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f0c1f;
+    --surface: #1a1633;
+    --fg: #f2efff;
+    --muted: #aca6d1;
+    --line: #2e2852;
+    --accent: #a094ff;
+    --accent-ink: #0f0c1f;
+    --accent-soft: #272150;
+    --c2: #ff7a98;
+    --c2s: #3d1f33;
+    --c3: #ffbb55;
+    --c3s: #3a2d14;
+    --c4: #3fdccd;
+    --c4s: #12332f;
+    --g1: #7c5cff3a;
+    --g2: #ff3d6e2a;
+    --shadow: #7c5cff55;
+    --cg1: #4a2fe0;
+    --cg2: #a61cc0;
+    --cg3: #e0345f;
+    --code-bg: #0b0919;
+    --good: #3fdccd;
+    --good-soft: #12332f;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #0f0c1f;
+  --surface: #1a1633;
+  --fg: #f2efff;
+  --muted: #aca6d1;
+  --line: #2e2852;
+  --accent: #a094ff;
+  --accent-ink: #0f0c1f;
+  --accent-soft: #272150;
+  --c2: #ff7a98;
+  --c2s: #3d1f33;
+  --c3: #ffbb55;
+  --c3s: #3a2d14;
+  --c4: #3fdccd;
+  --c4s: #12332f;
+  --g1: #7c5cff3a;
+  --g2: #ff3d6e2a;
+  --shadow: #7c5cff55;
+  --cg1: #4a2fe0;
+  --cg2: #a61cc0;
+  --cg3: #e0345f;
+  --code-bg: #0b0919;
+  --good: #3fdccd;
+  --good-soft: #12332f;
+  color-scheme: dark;
+}
 
 * {
   box-sizing: border-box
@@ -1002,7 +1066,7 @@ footer {
 
 .btn.light {
   background: #fff;
-  color: #1e3a8a;
+  color: #2b1a8f;
   border-color: #fff
 }
 
@@ -1339,32 +1403,115 @@ svg {
   display: block
 }
 
-/* ================= v2: professional palette + compact skill cards ================= */
-/* section-title accent word (fixes the tiny 'SkillSet' caused by `.sec-head span`) */
-.sec-head h2 span{font:inherit;letter-spacing:inherit;color:var(--accent)}
-.hero h1 em{background:linear-gradient(90deg,var(--cg1),var(--cg3));-webkit-background-clip:text;background-clip:text;color:transparent}
-:root[data-theme="dark"] .hero h1 em{background:linear-gradient(90deg,#60a5fa,#22d3ee);-webkit-background-clip:text;background-clip:text}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .hero h1 em{background:linear-gradient(90deg,#60a5fa,#22d3ee);-webkit-background-clip:text;background-clip:text}}
+/* ---- Add at the END of globals.css ---- */
 
 /* My Recent Works */
-.rw{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin-bottom:36px;padding:28px;border-radius:16px;background:var(--accent-soft);border:1px solid var(--line)}
-.rw-img img{width:100%;height:auto;display:block}
-.rw-text{text-align:center;max-width:46ch;margin-inline:auto}
-.rw-text h2{font-size:clamp(30px,4vw,48px);font-weight:700;letter-spacing:-.02em}
-.rw-text p{margin-top:16px;color:var(--muted);font-size:clamp(15px,1.6vw,18px);line-height:1.65}
+.rw {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 40px;
+  padding: 24px;
+  border-radius: 16px;
+  background: var(--accent-soft)
+}
 
-/* project count next to filters */
+.rw-img img {
+  width: 100%;
+  height: auto;
+  display: block
+}
+
+.rw-text {
+  text-align: center;
+  max-width: 46ch;
+  margin-inline: auto
+}
+
+.rw-text h2 {
+  font-size: clamp(32px, 4.2vw, 52px);
+  font-weight: 700;
+  letter-spacing: -.02em
+}
+
+.rw-text h2 span,
+.sec-head.center h2 span {
+  color: var(--c2)
+}
+
+.rw-text p {
+  margin-top: 18px;
+  font-size: clamp(16px, 1.8vw, 20px);
+  line-height: 1.6
+}
+
+.rw+.sec-count {
+  display: none
+}
+
+/* Programming SkillSet */
+.sec-head.center {
+  justify-content: center;
+  text-align: center
+}
+
+.sec-head.center h2 {
+  padding-bottom: 0;
+  font-size: clamp(30px, 4vw, 48px)
+}
+
+.sec-head.center h2::after {
+  display: none
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px
+}
+
+.tech-grid li {
+  height: 165px;
+  border: 3px solid var(--accent);
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  color: var(--fg);
+  background: var(--surface);
+  transition: transform .15s ease, background .15s ease
+}
+
+.tech-grid li:hover {
+  background: var(--accent-soft);
+  transform: translateY(-3px)
+}
+
+@media (max-width:1024px) {
+  .tech-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px
+  }
+}
+
+@media (max-width:820px) {
+  .rw {
+    grid-template-columns: 1fr;
+    gap: 20px
+  }
+
+  .tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px
+  }
+
+  .tech-grid li {
+    height: 130px
+  }
+
+  .tech-grid svg {
+    width: 56px;
+    height: 56px
+  }
+}
 .filters .count{margin-left:auto;align-self:center;font:400 13px var(--f-mono);color:var(--muted)}
-
-/* Programming SkillSet: compact cards */
-.sec-head.center{justify-content:center;text-align:center;margin-bottom:24px}
-.sec-head.center h2{padding-bottom:0;font-size:clamp(28px,3.4vw,40px)}
-.sec-head.center h2::after{display:none}
-.tech-grid{display:grid;grid-template-columns:repeat(8,1fr);gap:12px}
-.tech-grid li{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;height:96px;padding:8px 4px;border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--fg);transition:transform .15s ease,border-color .15s ease,box-shadow .15s ease}
-.tech-grid li:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 10px 22px -14px var(--shadow)}
-.tech-grid svg{width:34px;height:34px;flex:none}
-.tech-grid .t-name{font:500 11.5px var(--f-mono);color:var(--muted);text-align:center;line-height:1.2}
-@media (max-width:1024px){.tech-grid{grid-template-columns:repeat(4,1fr)}}
-@media (max-width:820px){.rw{grid-template-columns:1fr;gap:20px;padding:20px}}
-@media (max-width:480px){.tech-grid{gap:8px}.tech-grid li{height:84px}.tech-grid svg{width:28px;height:28px}.tech-grid .t-name{font-size:10px}}
